@@ -2,7 +2,6 @@ CREATE DATABASE HeartDiseaseDB;
 
 USE HeartDiseaseDB;
 
--- Set up the table if not already created
 CREATE TABLE HeartDiseaseDataset (
     PatientID INT PRIMARY KEY,                 -- Unique identifier for each patient
     Age INT,                                   -- Age of the patient
@@ -131,7 +130,9 @@ BEGIN
 END;
 
 SELECT * FROM HeartDiseaseDataset;
---1. Demographic Analysis: Age Distribution and Gender-based Risk
+
+--1. Demographic Analysis: Age Distribution and Gender-based Risk.
+
 --QUERY 1: Heart Disease Diagnosis by Age Group and Gender
 
 CREATE VIEW AgeGenderHeartDiseaseAnalysis AS
@@ -162,8 +163,9 @@ GROUP BY
 
 SELECT * FROM AgeGenderHeartDiseaseAnalysis;
 
---2. Risk Factors Analysis: Smoking, Diabetes, and Hypertension
---QUERY 2: Heart Disease Diagnosis by Risk Factors
+--2. Risk Factors Analysis: Smoking, Diabetes, and Hypertension.
+
+--QUERY 2: Heart Disease Diagnosis by Risk Factors.
 
 CREATE VIEW RiskFactorAnalysis AS
 SELECT 
@@ -178,8 +180,9 @@ GROUP BY SmokingStatus, Diabetes, Hypertension;
 
 SELECT * FROM RiskFactorAnalysis;
 
---3.Correlation Analysis: Cholesterol and Blood Pressure with Heart Disease
---QUERY 3: Cholesterol and Blood Pressure Levels vs Heart Disease Diagnosis
+--3.Correlation Analysis: Cholesterol and Blood Pressure with Heart Disease.
+
+--QUERY 3: Cholesterol and Blood Pressure Levels vs Heart Disease Diagnosis.
 
 CREATE VIEW CorrelationAnalysis AS
 SELECT 
@@ -195,8 +198,9 @@ GROUP BY CholesterolLevel, BloodPressureSystolic, BloodPressureDiastolic;
 
 SELECT * FROM CorrelationAnalysis;
 
---4. Outcome Analysis: Treatment and Outcome of Heart Disease
--- QUERY 4: Heart Disease Treatment Outcome
+--4. Outcome Analysis: Treatment and Outcome of Heart Disease.
+
+-- QUERY 4: Heart Disease Treatment Outcome.
 
 CREATE VIEW OutcomeAnalysis AS
 SELECT 
@@ -210,8 +214,9 @@ GROUP BY HeartDiseaseTreatment;
 
 SELECT * FROM OutcomeAnalysis;
 
---5 Preventive Care: Visits and Effectiveness
---QUERY 5: Preventive Care Visits vs Diagnosis Outcome
+--5 Preventive Care: Visits and Effectiveness.
+
+--QUERY 5: Preventive Care Visits vs Diagnosis Outcome.
 
 CREATE VIEW PreventiveCare AS
 SELECT 
@@ -239,7 +244,5 @@ SELECT * FROM OutcomeAnalysis;
 --QUERY 5: Preventive Care Visits vs Diagnosis Outcome
 SELECT * FROM PreventiveCare;
 
-
-SELECT * FROM HeartDiseaseDataset;
 
 
